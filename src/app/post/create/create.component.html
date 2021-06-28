@@ -1,0 +1,87 @@
+<div class="container">
+    <h1>Create New Post</h1>
+  
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()" >
+        <div class="form-group">
+            <label for="user_name">Name:</label>
+            <input 
+                formControlName="user_name"
+                id="user_name" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.user_name.touched && f.user_name.invalid" class="alert alert-danger">
+                <div *ngIf="f.user_name.errors.required">Name is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mobile">Phone No:</label>
+            <input 
+                formControlName="mobile"
+                id="mobile" 
+                type="tel" 
+                class="form-control">
+            <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert alert-danger">
+                <div *ngIf="f.mobile.errors.required">Phone is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="whatsapp_number">Whatsaap Number:</label>
+            <input 
+                formControlName="whatsapp_number"
+                id="whatsapp_number" 
+                type="tel" 
+                class="form-control">
+            <div *ngIf="f.whatsapp_number.touched && f.whatsapp_number.invalid" class="alert alert-danger">
+                <div *ngIf="f.whatsapp_number.errors.required">Email is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input 
+                formControlName="password"
+                id="password" 
+                type="password" 
+                class="form-control">
+            <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                <div *ngIf="f.password.errors.required">Password is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input 
+                formControlName="address"
+                id="address" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.address.touched && f.address.invalid" class="alert alert-danger">
+                <div *ngIf="f.address.errors.required">Address is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input 
+                formControlName="email"
+                id="email" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                <div *ngIf="f.email.errors.required">Email is required.</div>
+            </div>
+        </div>
+        <!-- <div class="form-group">
+            <label for="register_id">Register ID:</label>
+            <input 
+                formControlName="register_id"
+                id="register_id" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.register_id.touched && f.register_id.invalid" class="alert alert-danger">
+                <div *ngIf="f.register_id.errors.required">register_id is required.</div>
+            </div>
+        </div> -->
+     
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>

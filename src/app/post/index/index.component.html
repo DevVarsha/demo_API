@@ -1,0 +1,59 @@
+<div class="container">
+    <h1>Angular CRUD Example - ItSolutionStuff.com</h1>
+            <button type="button" (click)="deletePost('email')" class="btn btn-danger">Delete</button><br><br>
+
+    <a href="#" routerLink="/post/create/" class="btn btn-success">Create New Post</a> &nbsp;
+    <a href="#" routerLink="/post/edit/" class="btn btn-primary">Edit</a>
+    
+    <!-- <table class="table table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let post of posts">
+        <td>{{ signup.user_name }}</td>
+        <td>{{ signup.passwors }}</td>
+        <td>{{ signup.address }}</td>
+        <td>{{ signup.email }}</td>
+        <td>{{ signup.mobile }}</td>
+        <td>{{ signup.whatsapp_number }}</td>
+        <td>
+          <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info">View</a>
+          <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary">Edit</a>
+          <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table> -->
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+     
+     
+
+  
+      <div class="form-group">
+          <label for="email">Email:</label>
+          <input 
+              formControlName="email"
+              id="email" 
+              type="text" 
+              class="form-control">
+          <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+              <div *ngIf="f.email.errors.required">Email is required.</div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input 
+            formControlName="password"
+            id="password" 
+            type="password" 
+            class="form-control">
+        <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+            <div *ngIf="f.password.errors.required">Password is required.</div>
+        </div>
+    </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+ </div>
